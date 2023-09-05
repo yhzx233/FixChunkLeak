@@ -5,6 +5,7 @@
 
 #include <llapi/LoggerAPI.h>
 #include <llapi/EventAPI.h>
+#include <llapi/HookAPI.h>
 
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/Player.hpp>
@@ -15,6 +16,8 @@
 
 // We recommend using the global logger.
 extern Logger logger;
+
+void hookLiteLoader();
 
 /**
  * @brief The entrypoint of the plugin. DO NOT remove or rename this function.
@@ -35,4 +38,33 @@ void PluginInit()
         }
         return true;
 	});
+
+    hookLiteLoader();
+}
+
+#include <llapi/mc/SimulatedPlayer.hpp>
+
+// enable virtual destructor
+#define ENABLE_VIRTUAL_FAKESYMBOL_CHUNKVIEWSOURCE
+#include <llapi/mc/ChunkViewSource.hpp>
+
+static_assert(sizeof(ChunkSource) == 0x60);
+static_assert(sizeof(ChunkViewSource) == 0x1e8);
+
+struct SimulatedPlayerHook {
+    std::shared_ptr<class ChunkViewSource> hookCreateChunkSource(ChunkSource& chunkSource) {
+        return std::make_shared<ChunkViewSource>(chunkSource, ChunkSource::LoadMode::Deferred);
+    }
+};
+
+void hookLiteLoader() {
+    static void* original;
+    auto imageBase = GetModuleHandleA("LiteLoader.dll");
+    if (!imageBase) {
+        logger.error("LiteLoader not found");
+        return;
+    }
+    auto addr = (uintptr_t)imageBase + 0x8D770;
+    THookRegister((void*)addr, &SimulatedPlayerHook::hookCreateChunkSource, &original);
+    // logger.info("LiteLoader hook {}", (void*)addr);
 }
