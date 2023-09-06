@@ -59,6 +59,10 @@ struct SimulatedPlayerHook {
 
 void hookLiteLoader() {
     static void* original;
+    if (ll::getLoaderVersion() != ll::Version(2, 15, 0)) {
+        logger.error("Failed to hook LiteLoader: unsupported version ({} != 2.15.0)", ll::getLoaderVersionString());
+        return;
+    }
     auto imageBase = GetModuleHandleA("LiteLoader.dll");
     if (!imageBase) {
         logger.error("LiteLoader not found");
