@@ -1,35 +1,5 @@
-# LeviLamina Plugin Template
+# FixChunkLeak
 
-A LeviLamina plugin template
+修复玩家携带地图导致的区块在玩家离开后不释放
 
-This plugin is a template for developing LeviLamina plugins.
-
-## Install
-
-Generate a new repository from this template.
-
-## Usage
-
-Before using this plugin template, make sure that you have installed XMake and a Minecraft Bedrock Server with LeviLamina.
-
-1. Clone the new repository into a local folder.
-
-1. Change the plugin name and the expected LeviLamina version in `xmake.lua`.
-
-1. Add your code.
-
-1. Run `xmake repo -u` in the root of the repository.
-
-1. Run `xmake` to build the plugin.
-
-Now the build is complete at `bin/`.
-
-## Contributing
-
-Ask questions by [creating an issue](https://github.com/LiteLDev/levilamina-plugin-template/issues/new/choose).
-
-PRs accepted.
-
-## License
-
-CC0-1.0 © futrime
+该 bug 具体表现之一为玩家退出后控制台 `/testfor @e` 仍然存在实体
