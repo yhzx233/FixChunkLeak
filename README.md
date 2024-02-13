@@ -1,29 +1,35 @@
-# LiteLoaderBDS C++ Plugin Template
+# LeviLamina Plugin Template
 
-The template repository for LiteLoaderBDS C++ plugin development.
+A LeviLamina plugin template
+
+This plugin is a template for developing LeviLamina plugins.
+
+## Install
+
+Generate a new repository from this template.
 
 ## Usage
 
-* Write and build your plugin
+Before using this plugin template, make sure that you have installed XMake and a Minecraft Bedrock Server with LeviLamina.
 
-  Please refer to [LiteLoaderBDS C++ Plugin Development Documentation](https://cpp.docs.litebds.com/en/) or [LiteLoaderBDS C++ 插件开发文档](https://cpp.docs.litebds.com/zh-Hans/).
+1. Clone the new repository into a local folder.
 
-* Edit README.md and LICENSE
+1. Change the plugin name and the expected LeviLamina version in `xmake.lua`.
 
-  You ought not to keep the original README.md, for it contains instructions on how to build your own plugin, which might not fit your plugin repository. The README.md of your repository should contain instructions on how to build, install and use your plugin.
+1. Add your code.
 
-  You don't necessarily want your repository to be open sourced under the Unlicense, so please choose your own license in place of the `LICENSE` file.
+1. Run `xmake repo -u` in the root of the repository.
 
-## For Beta Developers
+1. Run `xmake` to build the plugin.
 
-If you would like to experience the latest features for plugins in beta versions of LiteLoaderBDS, you can switch the branch of the SDK to beta. Run the commands below under the plugin repository:
+Now the build is complete at `bin/`.
 
-```sh
-git submodule set-branch --branch beta SDK
-git submodule update --init --remote
-```
+## Contributing
+
+Ask questions by [creating an issue](https://github.com/LiteLDev/levilamina-plugin-template/issues/new/choose).
+
+PRs accepted.
 
 ## License
 
-This repository is open source under the Unlicense.
-Please refer to [the license file](LICENSE) for further information.
+CC0-1.0 © futrime

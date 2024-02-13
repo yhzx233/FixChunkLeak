@@ -1,0 +1,27 @@
+{
+    "format_version": 2,
+    "tooth": "https://github.com/yhzx233/FixChunkLeak",
+    "version": "0.2.0",
+    "info": {
+        "name": "FixChunkLeak",
+        "description": "Fix the issue where chunks remain loaded after a player carrying a map leaves.",
+        "author": "yhzx233",
+        "tags": [
+            "levilamina",
+            "plugin",
+            "fix"
+        ]
+    },
+    "asset_url": "change_this",
+    "prerequisites": {
+        "github.com/LiteLDev/LeviLamina": "*"
+    },
+    "files": {
+        "place": [
+            {
+                "src": "FixChunkLeak/*",
+                "dest": "plugins/FixChunkLeak/"
+            }
+        ]
+    }
+}
