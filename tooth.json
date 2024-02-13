@@ -1,6 +1,6 @@
 {
     "format_version": 2,
-    "tooth": "https://github.com/yhzx233/FixChunkLeak",
+    "tooth": "github.com/yhzx233/FixChunkLeak",
     "version": "0.4.0",
     "info": {
         "name": "FixChunkLeak",
