@@ -12,7 +12,7 @@
             "fix"
         ]
     },
-    "asset_url": "change_this",
+    "asset_url": "https://github.com/yhzx233/FixChunkLeak/releases/download/v0.4.0/FixChunkLeak-windows-x64.zip",
     "prerequisites": {
         "github.com/LiteLDev/LeviLamina": "*"
     },
