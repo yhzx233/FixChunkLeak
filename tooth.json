@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "tooth": "github.com/yhzx233/FixChunkLeak",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "info": {
         "name": "FixChunkLeak",
         "description": "Fix the issue where chunks remain loaded after a player carrying a map leaves.",
@@ -12,7 +12,7 @@
             "fix"
         ]
     },
-    "asset_url": "https://github.com/yhzx233/FixChunkLeak/releases/download/v0.5.0/FixChunkLeak-windows-x64.zip",
+    "asset_url": "https://github.com/yhzx233/FixChunkLeak/releases/download/v0.5.1/FixChunkLeak-windows-x64.zip",
     "prerequisites": {
         "github.com/LiteLDev/LeviLamina": "0.8.x"
     },
