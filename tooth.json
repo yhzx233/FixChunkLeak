@@ -14,7 +14,7 @@
     },
     "asset_url": "https://github.com/yhzx233/FixChunkLeak/releases/download/v0.5.0/FixChunkLeak-windows-x64.zip",
     "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "*"
+        "github.com/LiteLDev/LeviLamina": "0.8.x"
     },
     "files": {
         "place": [
